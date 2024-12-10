@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ввод анкетных данных</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1 class="text-uppercase text-center">анкета</h1>
+            <form method="POST" action="/">
+                <div class="form-group">
+                    <label for="name">Имя:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="town">Город:</label>
+                    <input type="text" class="form-control" id="town" name="town" required>
+                </div>
+                <div class="form-group">
+                    <label for="hobby">Хобби:</label>
+                    <input type="text" class="form-control" id="hobby" name="hobby" required>
+                </div>
+                <div class="form-group">
+                    <label for="age" class="form-label">Возраст:</label>
+                    <input type="range" class="form-range w-100" min="0" max="100" id="age">
+                </div>
+            <button type="submit">Отправить</button>
+            </form>
+        </div>
+        <hr>
+        <h1 class="text-uppercase text-center">введенные данные</h1>
+        {% for i in data %}
+       <!--  создает отдельный div, внутри которого записываются заголовки и текст постов -->
+            <div class="card">
+            <div class="card-body">
+                <h4>{{ i.name }}</h4>
+                <p>Город: {{ i.town }}</p>
+                <p>Хобби: {{ i.hobby }}</p>
+                <p>Возраст: {{ i.age }}</p>
+            </div>
+
+
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
